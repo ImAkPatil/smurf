@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'library.books',
-    'graphene_django'
+    'graphene_django',
+    'rest_framework',
+    'api',
+    'rest_framework.authtoken', # new!
+    'rest_auth',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +75,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'library.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -111,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Calcutta'
 
 USE_I18N = True
 
